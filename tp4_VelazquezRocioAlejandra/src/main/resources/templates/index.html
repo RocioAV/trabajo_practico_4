@@ -4,17 +4,263 @@
 		<meta charset="UTF-8">
 		<meta name="viewport" content="width=device-width, initial-scale=1">
 		<title>Inicio</title>
-		<link th:rel="stylesheet" th:href="@{/webjar/bootstrap/css/bootstrap.min.css}">
+		<link th:rel="stylesheet" th:href="@{/webjars/bootstrap/css/bootstrap.min.css}">
+		<link rel="stylesheet" th:href="@{/css/style.css}">
 		
 	</head>
 	
 	<body>
 	
+		<header>
+			<div class="container-fluid header">
+					<img th:src="@{/images/logo.png}" alt="Logo" class="img-fluid">
+					<span>
+						<p><em>Construyendo soluciones para un mañana más brillante</em></p>
+					</span>
+			</div>		
+		
+		</header>
+	
+		<nav class="navbar navbar-expand-lg" style="background-color: #0c4a6e;">
+		    <div class="container-fluid">
+		        <a class="navbar-brand" href="#"></a>
+		        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNavAltMarkup" aria-controls="navbarNavAltMarkup" aria-expanded="false" aria-label="Toggle navigation">
+		            <span class="navbar-toggler-icon"></span>
+		        </button>
+		        <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
+		            <div class="navbar-nav">
+		                <a class="nav-link active text-light" aria-current="page" href="#">Inicio</a>
+		                <a class="nav-link text-light" href="#">Acerca de</a>
+		                <a class="nav-link text-light" href="#">Carreras</a>
+		                <a class="nav-link text-light" href="#">Noticias</a>
+		                <a class="nav-link text-light" href="#">Contacto</a>
+		                <a class="nav-link disabled text-light" aria-disabled="true">- Universidad Nacional de Jujuy -</a>
+		            </div>
+		        </div>
+		    </div>
+		</nav>
+
+		
+		<div class="container-fluid mt-4">
+		    <div class="row">
+		        <!-- Contenido Principal -->
+		         <section class="col-md-9">
+			            <h2 class="text" >Facultad de Ingenieria</h2>
+			            <div class="container-fluid">
+			            	<p>
+			               	La Facultad de Ingeniería de la Universidad Nacional de Jujuy (UNJu) es una institución comprometida con la excelencia académica y la innovación tecnológica. Ubicada en San Salvador de Jujuy, esta facultad se dedica a la formación de ingenieros en diversas especialidades, tales como Ingeniería Industrial, Ingeniería de Minas e Ingeniería Informática.
+			           		 </p>
+			           		 <p>
+			               		La facultad se distingue por su enfoque en la investigación aplicada y el desarrollo de proyectos que responden a las necesidades regionales y nacionales. Equipados con laboratorios de última generación y respaldados por un cuerpo docente de alto nivel, los estudiantes reciben una educación integral que combina teoría y práctica, preparando a los futuros ingenieros para enfrentar los retos del siglo XXI.
+			           		 </p>
+			           		 <p>
+			               		Además de su excelencia académica, la Facultad de Ingeniería de la UNJu mantiene una estrecha colaboración con la industria y las comunidades locales, promoviendo el desarrollo sostenible y la responsabilidad social. Este enfoque no solo garantiza la formación de profesionales altamente competentes, sino también de líderes comprometidos con el progreso y el bienestar de la sociedad jujeña y del país.
+			           		 </p>
+			           		 
+			           		<div class="container">
+			           			
+								<div id="carouselExample" class="carousel slide">
+								  <div class="carousel-inner">
+								  	<div class="carousel-item active">
+								      <img src="https://imgs.search.brave.com/UfltPkAqXYH9usyQGaZcT6FKOP92-1J7Y0Mu-Ac3TT0/rs:fit:500:0:0/g:ce/aHR0cHM6Ly9hcmdl/bnRpbmFlc3R1ZGlh/LmNvbS93cC1jb250/ZW50L3VwbG9hZHMv/MjAyMS8wNy9kaXBs/b21hdHVyYV9VTkpV/LmpwZw" class="d-block w-100" alt="...">
+								    </div>
+								    <div class="carousel-item ">
+								      <img src="https://imgs.search.brave.com/1x4Rudqr-nAAt1w_qArXpmT1_VSWqc1IME9qhOagkWg/rs:fit:500:0:0/g:ce/aHR0cHM6Ly9zdGF0/aWNzLnNvbW9zanVq/dXkuY29tLmFyLzIw/MjEvMDIvY3JvcC82/MzQyMjdhNmIzN2Uw/X180MDB4MzAwLndl/YnA" class="d-block w-100" alt="...">
+								    </div>
+								    <div class="carousel-item">
+								      <img src="https://scontent.fjuj5-1.fna.fbcdn.net/v/t39.30808-6/426215274_899058115553510_4438955031686040915_n.jpg?_nc_cat=110&ccb=1-7&_nc_sid=5f2048&_nc_eui2=AeHpA4r1cNdb5pySNr_0Gxmn-RQHF0hHOGj5FAcXSEc4aNnh59bFyQdhSTIswGdRC7PC4-jxpdA0WHGWafn1QTin&_nc_ohc=q8F92N9BZ_cQ7kNvgGBnM5u&_nc_ht=scontent.fjuj5-1.fna&oh=00_AYAuaDxei6iUp2GEjkjXt8-6naCSXPUppNM_Tq6exnIQNA&oe=6659D5D1" class="d-block w-100" alt="...">
+								    </div>
+
+								  </div>
+								  <button class="carousel-control-prev" type="button" data-bs-target="#carouselExample" data-bs-slide="prev">
+								    <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+								    <span class="visually-hidden">Previous</span>
+								  </button>
+								  <button class="carousel-control-next" type="button" data-bs-target="#carouselExample" data-bs-slide="next">
+								    <span class="carousel-control-next-icon" aria-hidden="true"></span>
+								    <span class="visually-hidden">Next</span>
+								  </button>
+								</div>
+								
+			           		</div>
+							<br>
+							
+							<hr class="my-4">
+
+							<br>
+							
+						    <div class="accordion" id="accordionExample">
+						        <div class="accordion-item">
+						            <h2 class="accordion-header" id="headingOne">
+						                <button class="accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#collapseOne" aria-expanded="true" aria-controls="collapseOne">
+						                    Autoridades
+						                </button>
+						            </h2>
+						            <div id="collapseOne" class="accordion-collapse collapse" aria-labelledby="headingOne" data-bs-parent="#accordionExample">
+						                <div class="accordion-body">
+						                    <div class="container">
+						                        <div class="row">
+						                            <div class="col-md-6">
+						                                <img src="https://fi.unju.edu.ar/images/vicedecano-fi-unju-vargas.jpg" class="img-fluid rounded mx-auto d-block mb-3" alt="Decano">
+						                                <p class="text-center"><strong>DECANO</strong></p>
+						                                <p class="text-center">Ing. Luis Alejandro Vargas</p>
+						                            </div>
+						                            <div class="col-md-6">
+						                                <img src="https://fi.unju.edu.ar/images/Vicedecana-fi-unju-Alfaro.jpg" class="img-fluid rounded mx-auto d-block mb-3" alt="Vicedecana">
+						                                <p class="text-center"><strong>VICEDECANA</strong></p>
+						                                <p class="text-center">Ing. María Esther Alfaro</p>
+						                            </div>
+						                        </div>
+<!-- 						                        <p class="text-center"><strong>Dirección:</strong> Ítalo Palanca N° 10</p> -->
+<!-- 						                        <p class="text-center"><strong>Teléfono:</strong> 0388 - 4221542 / 4221582</p> -->
+						                        <p class="text-center"><strong>Correos electrónicos:</strong></p>
+						                        <p class="text-center"><a href="mailto:decano@fi.unju.edu.ar">decano@fi.unju.edu.ar</a></p>
+						                        <p class="text-center"><a href="mailto:vicedecano@fi.unju.edu.ar">vicedecana@fi.unju.edu.ar</a></p>
+						                    </div>
+						                </div>
+						            </div>
+						        </div>
+						    </div>
+			            
+			        </section>
+			        
+			        <aside class="col-md-4 back-color p-4 rounded navCont">
+				            <h2>Recursos</h2>
+				            <ul class="nav flex-column">
+				                <li class="nav-item">
+				                    <a class="nav-link" th:href="@{/biblioteca}">Biblioteca</a>
+				                </li>
+				                <li class="nav-item">
+				                    <a class="nav-link" th:href="@{/calendario}">Calendario Académico</a>
+				                </li>
+				                 <li class="nav-item">
+				                    <a class="nav-link" th:href="@{/correo}">Correo Institucional</a>
+				                </li>
+				            </ul>
+		      		  </aside>
+		        
+		    </div>
+		    <br>
+		    <hr>
+		    <br>
+		    <!-- Sección de Noticias Recientes -->
+			        <section class="container mt-5">
+					    <h2 class="text">Noticias Recientes</h2>
+					    <div id="newsCarousel" class="carousel slide" data-bs-ride="carousel" data-bs-interval="3000">
+					        <div class="carousel-inner">
+					            <div class="carousel-item active">
+					                <div class="card mb-3 card-2" style="max-width: 100%;">
+					                    <div class="row g-0">
+					                        <div class="col-md-4">
+					                            <img src="https://fi.unju.edu.ar/images/2024-Noticias/FB_IMG_1716512587421.jpg" class="img-fluid rounded-start" alt="...">
+					                        </div>
+					                        <div class="col-md-8">
+					                            <div class="card-body">
+					                                <h5 class="card-title">52° Aniversario de la Facultad de Ingeniería de la UNJu</h5>
+					                                <p class="card-text">📣 ¡52° Aniversario de nuestra querida Facultad de Ingeniería!
+					                                    Y lo festeja con una riquísima chocolatada, mañana viernes 24 de mayo a las 10.00 hs en el patio de Decanato
+					                                    ¡Quedan todos invitados!
+					                                </p>
+					                            </div>
+					                        </div>
+					                    </div>
+					                </div>
+					            </div>
+					            <div class="carousel-item">
+					                <div class="card mb-3 card-2" style="max-width: 100%;">
+					                    <div class="row g-0">
+					                        <div class="col-md-4">
+					                            <img src="https://fi.unju.edu.ar/images/2024-Noticias/Ingeniavoz-2024-01.png" class="img-fluid rounded-start" alt="...">
+					                        </div>
+					                        <div class="col-md-8">
+					                            <div class="card-body">
+					                                <h5 class="card-title">CADI - CAEDI | Reunión Informativa IngeniaVoz 24/05 16:30hs</h5>
+					                                <p class="card-text">El Comité Organizador del CADI-CAEDI 2024 invita a los/as estudiantes a la convocatoria de la propuesta “IngeniaVoz”, espacio creado para ellos en el marco del CADI-CAEDI 2024.  Es la primera vez que se cuenta con un espacio sólo para estudiantes.
+					                                    La misma propone que los/as estudiantes puedan participar de forma activa mediante una presentación oral breve, estructurada y dinámica sobre temas que pueden ser muy variados, desde tecnología y ciencia hasta arte y cultura, todos ellos que tengan algún vínculo con la ingeniería, de esta forma se busca impactar, inspirar y/o enseñar a la audiencia.
+					                                    Para ello contarán con un entrenamiento, previo al congreso y 100% a distancia, con expertas en habilidades comunicacionales.  Esta preparación está prevista para los meses de junio y agosto.
+					                                    Las inscripciones a IngeniaVoz estarán abiertas hasta el 06/06/2024.
+					                                    Con la finalidad de ampliar información y despejar dudas, daremos una videoconferencia el viernes 24/05 a las 16:30hs.
+					                                </p>
+					                            </div>
+					                        </div>
+					                    </div>
+					                </div>
+					            </div>
+					            <div class="carousel-item">
+					                <div class="card mb-3 card-2" style="max-width: 100%;">
+					                    <div class="row g-0">
+					                        <div class="col-md-4">
+					                            <img src="https://fi.unju.edu.ar/images/2024-Noticias/Curso-posgrado-Derecho-inteligencia-artificial.png" class="img-fluid rounded-start" alt="...">
+					                        </div>
+					                        <div class="col-md-8">
+					                            <div class="card-body">
+					                                <h5 class="card-title">Curso de posgrado: "Derecho e Inteligencia Artificial"</h5>
+					                                <p class="card-text">La inscripción al curso se realiza completando el siguiente formulario:
+					                                    <a href="https://docs.google.com/forms/u/2/d/1Fi8wJ2rz65Sms37cjcQD158rd3zWzYrtP8251O5jxSQ/edit?usp=drive_web">https://docs.google.com/forms/u/2/d/1Fi8wJ2rz65Sms37cjcQD158rd3zWzYrtP8251O5jxSQ/edit?usp=drive_web</a>
+					                                    Una vez hecha la inscripción se debe realizar el pago mediante transferencia al siguiente alias: COOPERADORA.FACULTAD (todo con mayúsculas y separadas por un punto).
+					                                    Una vez realizada la transferencia, se deberá completar el siguiente formulario con los datos de facturación y adjuntar el comprobante.
+					                                    <a href="https://docs.google.com/forms/u/2/d/1UtfuSE5IUBljVDq_WaIN5XqfAEthZ9ss_RtMo8SKquI/edit?usp=drive_web">https://docs.google.com/forms/u/2/d/1UtfuSE5IUBljVDq_WaIN5XqfAEthZ9ss_RtMo8SKquI/edit?usp=drive_web</a>
+					                                    Consultas: coordinacionposgrado@fi.unju.edu.ar
+					                                    cibercrimen@fi.unju.edu.ar - 388-4207007
+					                                </p>
+					                            </div>
+					                        </div>
+					                    </div>
+					                </div>
+					            </div>
+					        </div>
+					        <button class="carousel-control-prev" type="button" data-bs-target="#newsCarousel" data-bs-slide="prev">
+					            <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+					            <span class="visually-hidden">Previous</span>
+					        </button>
+					        <button class="carousel-control-next" type="button" data-bs-target="#newsCarousel" data-bs-slide="next">
+					            <span class="carousel-control-next-icon" aria-hidden="true"></span>
+					            <span class="visually-hidden">Next</span>
+					        </button>
+					    </div>
+					</section>
+
+
+		
+		       
+		</div>
+	
+	<footer class="py-4" style="background-color: #e2e8f0;">
+    <div class="container">
+        <div class="row">
+            <div class="col-md-4">
+                <h4 class="text-dark">Redes Sociales</h4>
+                <ul class="list-unstyled">
+                    <li><a class="text-dark" href="https://www.facebook.com/fiunju/">Facebook</a></li>
+                    <li><a class="text-dark" href="https://www.youtube.com/">YouTube</a></li>
+                    <li><a class="text-dark" href="https://www.instagram.com">Instagram</a></li>
+                </ul>
+            </div>
+            <div class="col-md-4">
+                <h4 class="text-dark">Contactanos</h4>
+                <ul class="list-unstyled">
+                    <li class="text-dark">San Salvador de Jujuy Jujuy - Argentina</li>
+                    <li class="text-dark">Ítalo Palanca Nº 10</li>
+                    <li class="text-dark">info@fi.unju.edu.ar</li>
+                     
+                    <li><a class="text-dark" href="https://www.whatsapp.com/?lang=es_LA">+54 3884587124</a></li>
+                </ul>
+            </div>
+            <div class="col-md-4 text-center">
+                <img class="img-fluid" alt="facultad" th:src="@{/images/logo.png}">
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-md-12 text-center">
+                <p class="mb-0 text-dark">Copyright © 2014-2022 - Facultad de Ingeniería - Universidad Nacional de Jujuy</p>
+            </div>
+        </div>
+    </div>
+</footer>
+
+
 	
 	
-	
-	
-	
-	<script type="text/javascript" th:src="@{/webjar/bootstrap/js/bootstrap.bundle.min.js}"></script>
+	<script type="text/javascript" th:src="@{/webjars/bootstrap/js/bootstrap.bundle.min.js}"></script>
 	</body>
 </html>

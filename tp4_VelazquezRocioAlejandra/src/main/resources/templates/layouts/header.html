@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org" lang="es">
+	<head th:fragment="head">
+	    <meta charset="UTF-8">
+	    <meta name="viewport" content="width=device-width, initial-scale=1">
+	    <title data-th-text="${titulo}"></title>
+	    <link th:rel="stylesheet" th:href="@{/webjars/bootstrap/css/bootstrap.min.css}">
+	    <link th:rel="stylesheet" th:href="@{/css/style.css}">
+	</head>
+	<body>
+	    <header th:fragment="header">
+	        <div class="container-fluid header">
+	            <img th:src="@{/images/logo.png}" alt="Logo" class="img-fluid">
+	            <span>
+	                <p><em>Construyendo soluciones para un mañana más brillante</em></p>
+	            </span>
+	        </div>
+	       	<nav class="navbar navbar-expand-lg" style="background-color: #0c4a6e;">
+		        <div class="container-fluid">
+		            <a class="navbar-brand" href="#"></a>
+		            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNavAltMarkup" aria-controls="navbarNavAltMarkup" aria-expanded="false" aria-label="Toggle navigation">
+		                <span class="navbar-toggler-icon"></span>
+		            </button>
+		            <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
+		                <div class="navbar-nav">
+		                    <a class="nav-link active text-light" aria-current="page" href="#">Inicio</a>
+		                    <a class="nav-link text-light" href="#">Acerca de</a>
+		                    <a class="nav-link text-light" href="#">Carreras</a>
+		                    <a class="nav-link text-light" href="#">Noticias</a>
+		                    <a class="nav-link text-light" href="#">Contacto</a>
+		                    <a class="nav-link disabled text-light" aria-disabled="true">- Universidad Nacional de Jujuy -</a>
+		                </div>
+		            </div>
+		        </div>
+	   		</nav>
+	    </header>
+
+	</body>
+</html>

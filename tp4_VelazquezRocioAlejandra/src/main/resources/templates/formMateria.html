@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org" lang="es">
+	<head data-th-replace="~{/layouts/header :: head}"></head>
+	<body>
+		<header data-th-replace="~{/layouts/header :: header}"></header>
+		
+		
+		<div class="container mt-5">
+	        <section class="p-4 bg-light rounded shadow-sm">
+	            <h1 class="mb-4">Formulario Materia</h1>
+	            <form>
+	                <div class="row mb-3">
+	                    <div class="col">
+	                        <label for="codigo" class="form-label">Código</label>
+	                        <input id="codigo" type="text" class="form-control" placeholder="Código" aria-label="Código" required>
+	                    </div>
+	                    <div class="col">
+	                        <label for="nombre" class="form-label">Nombre</label>
+	                        <input id="nombre" type="text" class="form-control" placeholder="Nombre" aria-label="Nombre" required>
+	                    </div>
+	                </div>
+	                
+	                <div class="row mb-3">
+	                    <div class="col">
+	                        <label for="curso" class="form-label">Curso</label>
+	                        <select id="curso" class="form-control" required>
+	                            <option value="" disabled selected>Seleccione el curso</option>
+	                            <option value="1ro">1ro</option>
+	                            <option value="2do">2do</option>
+	                            <option value="3ro">3ro</option>
+	                            <option value="4to">4to</option>
+	                            <option value="5to">5to</option>
+	                        </select>
+	                    </div>
+	                    <div class="col">
+	                        <label for="cantHoras" class="form-label">Cantidad de Horas</label>
+	                        <input id="cantHoras" type="number" class="form-control" placeholder="Cantidad de Horas" aria-label="Cantidad de Horas" min="1" required>
+	                    </div>
+	                </div>
+	                
+	                <div class="row mb-3">
+	                    <div class="col">
+	                        <label for="modalidad" class="form-label">Modalidad</label>
+	                        <select id="modalidad" class="form-control" required>
+	                            <option value="" disabled selected>Seleccione la modalidad</option>
+	                            <option value="presencial">Presencial</option>
+	                            <option value="virtual">Virtual</option>
+	                            <option value="presencial/virtual">Presencial/Virtual</option>
+	                        </select>
+	                    </div>
+	                    <div class="col">
+	                        <label for="docente" class="form-label">Docente</label>
+	                        <input id="docente" type="text" class="form-control" placeholder="Docente" aria-label="Docente" required>
+	                    </div>
+	                </div>
+	                
+	                <div class="row mb-3">
+	                    <div class="col">
+	                        <label for="carrera" class="form-label">Carrera</label>
+	                        <select id="carrera" class="form-control" required>
+	                            <option value="" disabled selected>Seleccione la carrera</option>
+	                            <option value="carrera1">Carrera 1</option>
+	                            <option value="carrera2">Carrera 2</option>
+	                            <option value="carrera3">Carrera 3</option>
+	                        </select>
+	                    </div>
+	                </div>
+	                
+	                <div class="row">
+	                    <div class="col text-center">
+	                        <button type="submit" class="btn btn-primary mb-3">Agregar Materia</button>
+	                    </div>
+	                </div>
+	            </form>
+	        </section>
+	    </div>
+
+		
+		<footer  data-th-replace="~{/layouts/footer :: footer}"></footer>
+
+		<script type="text/javascript" th:src="@{/webjars/bootstrap/js/bootstrap.bundle.min.js}"></script>
+	</body>
+</html>

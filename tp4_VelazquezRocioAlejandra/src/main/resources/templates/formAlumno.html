@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org" lang="es">
+	<head data-th-replace="~{/layouts/header :: head}"></head>
+	<body>
+		<header data-th-replace="~{/layouts/header :: header}"></header>
+		
+		<div class="container mt-5">
+	        <section class="p-4 bg-light rounded shadow-sm">
+	        	<h1 class="mb-4">Formulario Alumno</h1>
+	            <form>
+	                <div class="row mb-3">
+	                    <div class="col">
+	                        <label for="name" class="form-label">Nombre</label>
+	                        <input id="name" type="text" class="form-control" placeholder="Nombre" aria-label="Nombre" required>
+	                    </div>
+	                    <div class="col">
+	                        <label for="lastName" class="form-label">Apellido</label>
+	                        <input id="lastName" type="text" class="form-control" placeholder="Apellido" aria-label="Apellido" required>
+	                    </div>
+	                </div>
+	                
+	                <div class="row mb-3">
+	                    <div class="col">
+	                        <label for="email" class="form-label">Correo electrónico</label>
+	                        <input id="email" type="email" class="form-control" placeholder="Correo electrónico" aria-label="Correo electrónico" required>
+	                    </div>
+	                    <div class="col">
+	                        <label for="phone" class="form-label">Teléfono</label>
+	                        <input id="phone" type="number" class="form-control" placeholder="Teléfono" aria-label="Teléfono" required>
+	                    </div>
+	                </div>
+	                
+	                <div class="row mb-3">
+	                    <div class="col">
+	                        <label for="dni" class="form-label">DNI</label>
+	                        <input id="dni" type="number" class="form-control" placeholder="DNI" aria-label="DNI" required>
+	                    </div>
+	                    <div class="col">
+	                        <label for="birthday" class="form-label">Fecha de nacimiento</label>
+	                        <input id="birthday" type="date" class="form-control" aria-label="Fecha de nacimiento" required>
+	                    </div>
+	                </div>
+	                
+	                <div class="row mb-3">
+	                    <div class="col">
+	                        <label for="adress" class="form-label">Domicilio</label>
+	                        <input id="adress" type="text" class="form-control" placeholder="Domicilio" aria-label="Domicilio" required>
+	                    </div>
+	                    <div class="col">
+	                        <label for="lu" class="form-label">Libreta Universitaria - LU</label>
+	                        <input id="lu" type="number" class="form-control" placeholder="Libreta Universitaria - LU" aria-label="Libreta Universitaria - LU" required>
+	                    </div>
+	                </div>
+	                
+	                <div class="row mb-3">
+	                    <div class="col text-center">
+	                        <button type="submit" class="btn btn-primary">Agregar alumno</button>
+	                    </div>
+	                </div>
+	                
+	            </form>
+	        </section>
+	    </div>
+		
+		
+		<footer  data-th-replace="~{/layouts/footer :: footer}"></footer>
+		
+		<script type="text/javascript" th:src="@{/webjars/bootstrap/js/bootstrap.bundle.min.js}"></script>
+	</body>
+</html>

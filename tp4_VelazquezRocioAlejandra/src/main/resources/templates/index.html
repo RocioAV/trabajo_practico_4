@@ -11,34 +11,7 @@
 	
 	<body>
 	
-		<header>
-			<div class="container-fluid header">
-					<img th:src="@{/images/logo.png}" alt="Logo" class="img-fluid">
-					<span>
-						<p><em>Construyendo soluciones para un mañana más brillante</em></p>
-					</span>
-			</div>		
-		
-		</header>
-	
-		<nav class="navbar navbar-expand-lg" style="background-color: #0c4a6e;">
-		    <div class="container-fluid">
-		        <a class="navbar-brand" href="#"></a>
-		        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNavAltMarkup" aria-controls="navbarNavAltMarkup" aria-expanded="false" aria-label="Toggle navigation">
-		            <span class="navbar-toggler-icon"></span>
-		        </button>
-		        <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
-		            <div class="navbar-nav">
-		                <a class="nav-link active text-light" aria-current="page" href="#">Inicio</a>
-		                <a class="nav-link text-light" href="#">Acerca de</a>
-		                <a class="nav-link text-light" href="#">Carreras</a>
-		                <a class="nav-link text-light" href="#">Noticias</a>
-		                <a class="nav-link text-light" href="#">Contacto</a>
-		                <a class="nav-link disabled text-light" aria-disabled="true">- Universidad Nacional de Jujuy -</a>
-		            </div>
-		        </div>
-		    </div>
-		</nav>
+		<header data-th-replace="~{/layouts/header :: header}"></header>
 
 		
 		<div class="container-fluid mt-4">
@@ -225,42 +198,11 @@
 		       
 		</div>
 	
-	<footer class="py-4" style="background-color: #e2e8f0;">
-    <div class="container">
-        <div class="row">
-            <div class="col-md-4">
-                <h4 class="text-dark">Redes Sociales</h4>
-                <ul class="list-unstyled">
-                    <li><a class="text-dark" href="https://www.facebook.com/fiunju/">Facebook</a></li>
-                    <li><a class="text-dark" href="https://www.youtube.com/">YouTube</a></li>
-                    <li><a class="text-dark" href="https://www.instagram.com">Instagram</a></li>
-                </ul>
-            </div>
-            <div class="col-md-4">
-                <h4 class="text-dark">Contactanos</h4>
-                <ul class="list-unstyled">
-                    <li class="text-dark">San Salvador de Jujuy Jujuy - Argentina</li>
-                    <li class="text-dark">Ítalo Palanca Nº 10</li>
-                    <li class="text-dark">info@fi.unju.edu.ar</li>
-                     
-                    <li><a class="text-dark" href="https://www.whatsapp.com/?lang=es_LA">+54 3884587124</a></li>
-                </ul>
-            </div>
-            <div class="col-md-4 text-center">
-                <img class="img-fluid" alt="facultad" th:src="@{/images/logo.png}">
-            </div>
-        </div>
-        <div class="row">
-            <div class="col-md-12 text-center">
-                <p class="mb-0 text-dark">Copyright © 2014-2022 - Facultad de Ingeniería - Universidad Nacional de Jujuy</p>
-            </div>
-        </div>
-    </div>
-</footer>
+		<footer  data-th-replace="~{/layouts/footer :: footer}"></footer>
 
 
 	
 	
-	<script type="text/javascript" th:src="@{/webjars/bootstrap/js/bootstrap.bundle.min.js}"></script>
+		<script type="text/javascript" th:src="@{/webjars/bootstrap/js/bootstrap.bundle.min.js}"></script>
 	</body>
 </html>

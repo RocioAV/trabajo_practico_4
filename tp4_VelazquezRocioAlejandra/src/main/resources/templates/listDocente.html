@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org" lang="es">
+	<head data-th-replace="~{/layouts/header :: head}"></head>
+	<body>
+		<header data-th-replace="~{/layouts/header :: header}"></header>
+		
+		<section class="container mt-5">
+		    <h2>Tabla de Docentes</h2>
+		    <div class="table-responsive">
+		        <table class="table table-striped">
+		            <thead>
+		                <tr>
+		                    <th scope="col">Legajo</th>
+		                    <th scope="col">Nombre</th>
+		                    <th scope="col">Apellido</th>
+		                    <th scope="col">Email</th>
+		                    <th scope="col">Teléfono</th>
+		                    <th scope="col">Opciones</th>
+		                </tr>
+		            </thead>
+		            <tbody>
+		                <tr th:each="docente : ${docentes}">
+		                    <td th:text="${docente.legajo}"></td>
+		                    <td th:text="${docente.nombre}"></td>
+		                    <td th:text="${docente.apellido}"></td>
+		                    <td th:text="${docente.email}"></td>
+		                    <td th:text="${docente.telefono}"></td>
+		                    <td>
+		                        <a class="btn btn-warning" data-th-href="@{/docente/editar/}+${docente.legajo}" role="button">Editar</a>
+		                        <a class="btn btn-danger" data-th-href="@{/docente/eliminar/}+${docente.legajo}" role="button">Eliminar</a>
+		                    </td>
+		                </tr>
+		            </tbody>
+		        </table>
+		    </div>
+		</section>
+
+
+		
+		<footer  data-th-replace="~{/layouts/footer :: footer}"></footer>
+
+
+	
+	
+		<script type="text/javascript" th:src="@{/webjars/bootstrap/js/bootstrap.bundle.min.js}"></script>
+	</body>
+</html>

@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org" lang="es">
+	<head data-th-replace="~{/layouts/header :: head}"></head>
+	<body>
+		<header data-th-replace="~{/layouts/header :: header}"></header>
+		
+		<section class="container mt-5">
+		    <h2>Tabla de Carreras</h2>
+		    <div class="table-responsive">
+		        <table class="table table-striped">
+		            <thead>
+		                <tr>
+		                    <th scope="col">Código</th>
+		                    <th scope="col">Nombre</th>
+		                    <th scope="col">Duración (años)</th>
+		                    <th scope="col">Estado</th>
+		                    <th scope="col">Opciones</th>
+		                </tr>
+		            </thead>
+		            <tbody>
+		                <tr th:each="carrera : ${carreras}">
+		                    <td th:text="${carrera.codigo}"></td>
+		                    <td th:text="${carrera.nombre}"></td>
+		                    <td th:text="${carrera.cantAnios}"></td>
+		                    <td th:text="${carrera.estado ? 'Activa' : 'Inactiva'}"></td>
+		                    <td>
+		                        <a class="btn btn-warning" data-th-href="@{/carrera/editar/}+${carrera.codigo}" role="button">Editar</a>
+		                        <a class="btn btn-danger" data-th-href="@{/carrera/eliminar/}+${carrera.codigo}" role="button">Eliminar</a>
+		                    </td>
+		                </tr>
+		            </tbody>
+		        </table>
+		    </div>
+		</section>
+
+		
+		<footer  data-th-replace="~{/layouts/footer :: footer}"></footer>
+
+
+	
+	
+		<script type="text/javascript" th:src="@{/webjars/bootstrap/js/bootstrap.bundle.min.js}"></script>
+	</body>
+</html>

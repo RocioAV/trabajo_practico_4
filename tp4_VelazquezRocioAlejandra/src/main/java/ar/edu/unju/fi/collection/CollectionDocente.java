@@ -19,7 +19,7 @@ public class CollectionDocente {
 	/**
 	 * devuelve un arraylist de objetos de la clase carrera
 	 */
-	public static List<Docente> getCarreras(){
+	public static List<Docente> getDocentes(){
 		if(docentes.isEmpty()) {
 			docentes.add(new Docente("0001", "Hector Pedo", "Liberatori", "liberatori@gmail.com", 3885789456L));
 			docentes.add(new Docente("0002", "Maria Elena", "Gonzalez", "gonzalez@gmail.com", 3885671234L));

@@ -22,10 +22,10 @@ public class CollectionAlumno {
 	public static List<Alumno> getAlumnos() {
         if (alumnos.isEmpty()) {
             alumnos.add(new Alumno("44351449", "Rocio Alejandra", "Velazquez", "ro@gmail.com", 3885123456L, LocalDate.of(2002, 12, 2), "Av siempre viva 122", "APU5596"));
-            alumnos.add(new Alumno("45452485", "Noemi Ayelen", "Saravia", "noe@gmail.com", 3885456789L, LocalDate.of(2003, 06, 30), "Av siempre viva 1532", "APU5495"));
-            alumnos.add(new Alumno("44987562", "Mauricio Luca", "Suilice", "mauri@gmail.com", 3885159753L, LocalDate.of(2002, 05, 04), "Peru 122", "APU4596"));
+            alumnos.add(new Alumno("45452485", "Noemi Ayelen", "Saravia", "noe@gmail.com", 3885456789L, LocalDate.of(2003, 6, 30), "Av siempre viva 1532", "APU5495"));
+            alumnos.add(new Alumno("44987562", "Mauricio Luca", "Suilice", "mauri@gmail.com", 3885159753L, LocalDate.of(2002, 12, 11), "Peru 122", "APU4596"));
             alumnos.add(new Alumno("40487521", "Nehuen", "Velazquez", "nehuen@gmail.com", 3884785214L, LocalDate.of(1996, 10, 29), "Manantiales 132", "APU4495"));
-            alumnos.add(new Alumno("44351449", "Lucas Enrique", "Cari", "cari@gmail.com", 38854896523L, LocalDate.of(2002, 03, 11), "Las Rosas 12", "APU5698"));
+            alumnos.add(new Alumno("44351449", "Lucas Enrique", "Cari", "cari@gmail.com", 38854896523L, LocalDate.of(2002, 3, 11), "Las Rosas 12", "APU5698"));
         }
         return alumnos;
     }

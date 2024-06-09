@@ -5,10 +5,20 @@ import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 
+import ar.edu.unju.fi.collection.CollectionAlumno;
+
 
 @Controller
 @RequestMapping("/alumno")
 public class AlumnoController {
+	
+	@GetMapping("/list")
+	public String getAlumnosPage(Model model) {
+		model.addAttribute("alumnos", CollectionAlumno.getAlumnos());
+		model.addAttribute("titulo", "Listado Alumnos");
+		return "listAlumno";
+	}
+	
 	
 	@GetMapping("/form")
 	public String getNuevoAlumnoPage(Model model) {

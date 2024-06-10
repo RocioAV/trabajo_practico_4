@@ -2,6 +2,9 @@ package ar.edu.unju.fi.model;
 
 import java.time.LocalDate;
 
+import org.springframework.stereotype.Component;
+
+@Component
 public class Alumno {
 	private String dni;
 	private String  nombre;
@@ -90,6 +93,12 @@ public class Alumno {
 
 	public void setLu(String lu) {
 		this.lu = lu;
+	}
+
+	@Override
+	public String toString() {
+		return "Alumno [dni=" + dni + ", nombre=" + nombre + ", apellido=" + apellido + ", email=" + email
+				+ ", telefono=" + telefono + ", fechaNac=" + fechaNac + ", domicilio=" + domicilio + ", lu=" + lu + "]";
 	}
 	
 	

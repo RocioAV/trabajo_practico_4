@@ -58,7 +58,7 @@ public class CollectionAlumno {
 	 */
 	public static void modificarAlumno (Alumno alumno) {
 		for (Alumno al : alumnos) {
-			if(al.getLu().compareTo(al.getLu())==0) {
+			if(al.getLu().compareTo(alumno.getLu())==0) {
 				al.setNombre(alumno.getNombre());
 				al.setApellido(alumno.getApellido());
 				al.setDni(alumno.getDni());

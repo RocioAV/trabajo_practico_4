@@ -6,55 +6,65 @@
 		
 		<div class="container mt-5">
 	        <section class="p-4 bg-light rounded shadow-sm">
-	        	<h1 class="mb-4">Formulario Alumno</h1>
-	            <form>
+	        	<h1 class="mb-4" th:text="${edicion} ? 'Modificar Alumno' : 'Agregar Nuevo Alumno'"></h1>
+	        	
+	            <form data-th-action="${edicion} ? @{/alumno/modificar} : @{/alumno/crear}" th:object="${alumno}" method="post">
 	                <div class="row mb-3">
 	                    <div class="col">
 	                        <label for="name" class="form-label">Nombre</label>
-	                        <input id="name" type="text" class="form-control" placeholder="Nombre" aria-label="Nombre" required>
+	                        <input id="name" type="text" class="form-control" placeholder="Nombre" aria-label="Nombre" required
+	                        th:field="*{nombre}">
 	                    </div>
 	                    <div class="col">
 	                        <label for="lastName" class="form-label">Apellido</label>
-	                        <input id="lastName" type="text" class="form-control" placeholder="Apellido" aria-label="Apellido" required>
+	                        <input id="lastName" type="text" class="form-control" placeholder="Apellido" aria-label="Apellido" required
+	                        	th:field="*{apellido}">
 	                    </div>
 	                </div>
 	                
 	                <div class="row mb-3">
 	                    <div class="col">
 	                        <label for="email" class="form-label">Correo electrónico</label>
-	                        <input id="email" type="email" class="form-control" placeholder="Correo electrónico" aria-label="Correo electrónico" required>
+	                        <input id="email" type="email" class="form-control" placeholder="Correo electrónico" aria-label="Correo electrónico" required
+	                        th:field="*{email}">
 	                    </div>
 	                    <div class="col">
 	                        <label for="phone" class="form-label">Teléfono</label>
-	                        <input id="phone" type="number" class="form-control" placeholder="Teléfono" aria-label="Teléfono" required>
+	                        <input id="phone" type="number" class="form-control" placeholder="Teléfono" aria-label="Teléfono" required
+	                        th:field="*{telefono}">
 	                    </div>
 	                </div>
 	                
 	                <div class="row mb-3">
 	                    <div class="col">
 	                        <label for="dni" class="form-label">DNI</label>
-	                        <input id="dni" type="number" class="form-control" placeholder="DNI" aria-label="DNI" required>
+	                        <input id="dni" type="number" class="form-control" placeholder="DNI" aria-label="DNI" required
+	                        th:field="*{dni}" th:readonly="${edicion}">
 	                    </div>
 	                    <div class="col">
 	                        <label for="birthday" class="form-label">Fecha de nacimiento</label>
-	                        <input id="birthday" type="date" class="form-control" aria-label="Fecha de nacimiento" required>
+	                        <input id="birthday" type="date" class="form-control" aria-label="Fecha de nacimiento" required
+      							th:if="${edicion}" th:value="${fechaNacPrev}" />
+      						<input id="birthday" type="date" class="form-control" aria-label="Fecha de nacimiento" required
+       							th:unless="${edicion}" th:field="*{fechaNac}" />
 	                    </div>
 	                </div>
 	                
 	                <div class="row mb-3">
 	                    <div class="col">
 	                        <label for="adress" class="form-label">Domicilio</label>
-	                        <input id="adress" type="text" class="form-control" placeholder="Domicilio" aria-label="Domicilio" required>
+	                        <input id="adress" type="text" class="form-control" placeholder="Domicilio" aria-label="Domicilio" required th:field="*{domicilio}">
 	                    </div>
 	                    <div class="col">
 	                        <label for="lu" class="form-label">Libreta Universitaria - LU</label>
-	                        <input id="lu" type="number" class="form-control" placeholder="Libreta Universitaria - LU" aria-label="Libreta Universitaria - LU" required>
+	                        <input id="lu" type="text" class="form-control" placeholder="Libreta Universitaria - LU" aria-label="Libreta Universitaria - LU" required
+	                        th:field="*{lu}" th:readonly="${edicion}">
 	                    </div>
 	                </div>
 	                
 	                <div class="row mb-3">
 	                    <div class="col text-center">
-	                        <button type="submit" class="btn btn-primary">Agregar alumno</button>
+	                        <button type="submit" class="btn btn-primary" th:text="${edicion ? 'Modificar Alumno ' : 'Guardar ALumno'}"></button>
 	                    </div>
 	                </div>
 	                

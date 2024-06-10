@@ -8,22 +8,23 @@
 		<div class="container mt-5">
 	        <section class="p-4 bg-light rounded shadow-sm">
 	            <h1 class="mb-4" th:text="${edicion} ? 'Modificar Materia' : 'Agregar Nueva Materia'"></h1>
-	            <form data-th-action="#" method="post">
+	            <form data-th-action="${edicion} ? @{/materia/modificar} : @{/materia/crear}" th:object="${materia}" method="post">
 	                <div class="row mb-3">
 	                    <div class="col">
 	                        <label for="codigo" class="form-label">Código</label>
-	                        <input id="codigo" type="text" class="form-control" placeholder="Código" aria-label="Código" required>
+	                        <input id="codigo" type="text" class="form-control" placeholder="Código" aria-label="Código" th:field="*{codigo}"
+                            th:readonly="${edicion}" required>
 	                    </div>
 	                    <div class="col">
 	                        <label for="nombre" class="form-label">Nombre</label>
-	                        <input id="nombre" type="text" class="form-control" placeholder="Nombre" aria-label="Nombre" required>
+	                        <input id="nombre" type="text" class="form-control" placeholder="Nombre" aria-label="Nombre" th:field="*{nombre}" required>
 	                    </div>
 	                </div>
 	                
 	                <div class="row mb-3">
 	                    <div class="col">
 	                        <label for="curso" class="form-label">Curso</label>
-	                        <select id="curso" class="form-control" required>
+	                        <select id="curso" class="form-control" th:field="*{curso}" required>
 	                            <option value="" disabled selected>Seleccione el curso</option>
 	                            <option value="1ro">1ro</option>
 	                            <option value="2do">2do</option>
@@ -34,14 +35,15 @@
 	                    </div>
 	                    <div class="col">
 	                        <label for="cantHoras" class="form-label">Cantidad de Horas</label>
-	                        <input id="cantHoras" type="number" class="form-control" placeholder="Cantidad de Horas" aria-label="Cantidad de Horas" min="1" required>
+	                        <input id="cantHoras" type="number" class="form-control" placeholder="Cantidad de Horas" aria-label="Cantidad de Horas" min="1"
+	                         th:field="*{cantHoras}" required>
 	                    </div>
 	                </div>
 	                
 	                <div class="row mb-3">
 	                    <div class="col">
 	                        <label for="modalidad" class="form-label">Modalidad</label>
-	                        <select id="modalidad" class="form-control" required>
+	                        <select id="modalidad" class="form-control" th:field="${materia.modalidad}" required>
 	                            <option value="" disabled selected>Seleccione la modalidad</option>
 	                            <option value="presencial">Presencial</option>
 	                            <option value="virtual">Virtual</option>
@@ -50,25 +52,36 @@
 	                    </div>
 	                    <div class="col">
 	                        <label for="docente" class="form-label">Docente</label>
-	                        <input id="docente" type="text" class="form-control" placeholder="Docente" aria-label="Docente" required>
+	                         <select class="form-control" id="docente" name="docentes" required
+	                            th:field="*{docente.legajo}">
+	                            <option value="">Seleccione un docente</option>
+	                            <option
+	                                th:each="docente : ${docentes}"
+	                                th:value="${docente.legajo}"
+	                                th:text="${docente.apellido} + ' ' + ${docente.nombre}"
+	                                th:selected="${materia.docente}"
+	                            ></option>
+	                        </select>
 	                    </div>
 	                </div>
 	                
 	                <div class="row mb-3">
 	                    <div class="col">
 	                        <label for="carrera" class="form-label">Carrera</label>
-	                        <select id="carrera" class="form-control" required>
-	                            <option value="" disabled selected>Seleccione la carrera</option>
-	                            <option value="carrera1">Carrera 1</option>
-	                            <option value="carrera2">Carrera 2</option>
-	                            <option value="carrera3">Carrera 3</option>
+		                       <select class="form-control" id="carrera" name="carrera" required
+	                           	th:field="*{carrera.codigo}">
+	                           	<option value=""> Seleccione una carrera</option>
+	                           	<option th:each="carrera : ${carreras}"
+	                               		th:text="${carrera.nombre}"
+	                               		th:value="${carrera.codigo}"
+	                           	></option>
 	                        </select>
 	                    </div>
 	                </div>
 	                
 	                <div class="row">
 	                    <div class="col text-center">
-	                        <button type="submit" class="btn btn-primary mb-3">Agregar Materia</button>
+	                         <button type="submit" class="btn btn-primary" th:text="${edicion ? 'Modificar Materia ' : 'Guardar Materia'}"></button>
 	                    </div>
 	                </div>
 	            </form>

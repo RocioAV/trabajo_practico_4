@@ -28,8 +28,9 @@ public class CollectionMateria {
      * Agrega un nuevo objeto Materia al ArrayList
      * @param materia
      */
-    public static void agregarMateria(Materia materia) {
+    public static boolean agregarMateria(Materia materia) {
         materias.add(materia);
+        return true;
     }
 	
 	

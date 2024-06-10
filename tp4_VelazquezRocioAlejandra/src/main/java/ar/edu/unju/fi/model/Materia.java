@@ -1,5 +1,8 @@
 package ar.edu.unju.fi.model;
 
+import org.springframework.stereotype.Component;
+
+@Component
 public class Materia {
 	private String codigo;
 	private String nombre;
@@ -13,6 +16,15 @@ public class Materia {
 		// TODO Auto-generated constructor stub
 	}
 	
+	
+
+	@Override
+	public String toString() {
+		return "Materia [codigo=" + codigo + ", nombre=" + nombre + ", curso=" + curso + ", cantHoras=" + cantHoras
+				+ ", modalidad=" + modalidad + ", docente=" + docente + ", carrera=" + carrera + "]";
+	}
+
+
 
 	public Materia(String codigo, String nombre, String curso, int cantHoras, String modalidad, Docente docente,
 			Carrera carrera) {

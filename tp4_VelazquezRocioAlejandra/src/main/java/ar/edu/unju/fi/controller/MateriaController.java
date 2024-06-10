@@ -30,6 +30,13 @@ public class MateriaController {
 	@Autowired
 	private Carrera carrera;
 	
+	
+	 /**
+     * Maneja la solicitud GET para la página de listado de materias.
+     *
+     * @param model el modelo para la vista.
+     * @return el nombre de la vista del listado de materias.
+     */
 	@GetMapping("/list")
 	public String getMateriasPage(Model model) {
 		model.addAttribute("materias", CollectionMateria.getMaterias());
@@ -37,6 +44,13 @@ public class MateriaController {
 		return "listMateria";
 	}
 	
+	
+	/**
+     * Maneja la solicitud GET para la página de creación de una nueva materia.
+     *
+     * @param model el modelo para la vista.
+     * @return el nombre de la vista del formulario de materia.
+     */
 	@GetMapping("/nuevo")
 	public String getNuevaMateriaPage(Model model) {
 		boolean edicion = false;
@@ -48,6 +62,13 @@ public class MateriaController {
 		return "formMateria";
 	}
 	
+	
+	/**
+     * Maneja la solicitud POST para guardar una nueva materia.
+     *
+     * @param materia el objeto materia a guardar.
+     * @return el ModelAndView con el listado de materias actualizado.
+     */
 	@PostMapping("/crear")
 	public ModelAndView guardarMateria(@ModelAttribute("materia") Materia materia) {
         ModelAndView modelView = new ModelAndView("listMateria");
@@ -62,6 +83,14 @@ public class MateriaController {
         return modelView;
     }
 	
+	
+	 /**
+     * Maneja la solicitud GET para la página de edición de una materia.
+     *
+     * @param model el modelo para la vista.
+     * @param codigo el código de la materia a editar.
+     * @return el nombre de la vista del formulario de materia.
+     */
 	@GetMapping("/editar/{codigo}")
 	public String getEditarMateriaPage(Model model, @PathVariable(value = "codigo") String codigo) {
         boolean edicion = true;
@@ -76,6 +105,13 @@ public class MateriaController {
     }
 	
 	
+	/**
+     * Maneja la solicitud POST para modificar una materia existente.
+     *
+     * @param materia el objeto materia con la información actualizada.
+     * @param redirectAttributes atributos para redirección.
+     * @return una redirección al listado de materias.
+     */
 	@PostMapping("/modificar")
 	 public String modificarMateria(@ModelAttribute("materia") Materia materia, RedirectAttributes redirectAttributes) {
         docente = CollectionDocente.buscarDocente(materia.getDocente().getLegajo());
@@ -88,6 +124,13 @@ public class MateriaController {
         return "redirect:/materia/list";
     }
 	
+	
+	/**
+     * Maneja la solicitud GET para eliminar una materia.
+     *
+     * @param codigo el código de la materia a eliminar.
+     * @return una redirección al listado de materias.
+     */
 	 @GetMapping("/eliminar/{codigo}")
 	 public String eliminarMateria(@PathVariable(value = "codigo") String codigo) {
 	        CollectionMateria.eliminarMateria(codigo);

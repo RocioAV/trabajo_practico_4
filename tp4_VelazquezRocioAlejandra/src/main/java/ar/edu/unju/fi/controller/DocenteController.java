@@ -21,6 +21,12 @@ public class DocenteController {
 	@Autowired
 	private Docente docente;
 
+	/**
+     * Maneja la solicitud GET para la página de listado de docentes.
+     *
+     * @param model el modelo para la vista.
+     * @return el nombre de la vista del listado de docentes.
+     */
 	@GetMapping("/list")
 	public String getDocentesPage(Model model) {
 		model.addAttribute("docentes", CollectionDocente.getDocentes());
@@ -28,6 +34,13 @@ public class DocenteController {
 		return "listDocente";
 	}
 	
+	
+	/**
+     * Maneja la solicitud GET para la página de creación de un nuevo docente.
+     *
+     * @param model el modelo para la vista.
+     * @return el nombre de la vista del formulario de docente.
+     */
 	@GetMapping("/nuevo")
 	public String getNuevoDocentePage(Model model) {
 		boolean edicion=false;
@@ -37,6 +50,13 @@ public class DocenteController {
 		return "formDocente";
 	}
 	
+	
+	/**
+     * Maneja la solicitud POST para guardar un nuevo docente.
+     *
+     * @param docente el objeto docente a guardar.
+     * @return el ModelAndView con el listado de docentes actualizado.
+     */
 	@PostMapping("/crear")
 	public ModelAndView guardarDocente(@ModelAttribute("docente") Docente docente) {
 		ModelAndView modelView = new ModelAndView("listDocente");
@@ -45,6 +65,14 @@ public class DocenteController {
 		return modelView;
 	}
 	
+	
+	/**
+     * Maneja la solicitud GET para la página de edición de un docente.
+     *
+     * @param model el modelo para la vista.
+     * @param legajo el número de legajo del docente a editar.
+     * @return el nombre de la vista del formulario de docente.
+     */
 	@GetMapping("/editar/{legajo}")
 	public String getModificarDocentePage(Model model, @PathVariable(value="legajo") String legajo) {
 		boolean edicion = true;
@@ -56,6 +84,13 @@ public class DocenteController {
 		return "formDocente";
 	}
 	
+	
+	/**
+     * Maneja la solicitud POST para modificar un docente existente.
+     *
+     * @param docente el objeto docente con la información actualizada.
+     * @return una redirección al listado de docentes.
+     */
 	@PostMapping("/modificar")
 	 public String editarDocente(@ModelAttribute("docente") Docente docente) {
 		
@@ -63,6 +98,13 @@ public class DocenteController {
         return "redirect:/docente/list";
     }
 	
+	
+	/**
+     * Maneja la solicitud GET para eliminar un docente.
+     *
+     * @param legajo el número de legajo del docente a eliminar.
+     * @return una redirección al listado de docentes.
+     */
 	 @GetMapping("/eliminar/{legajo}")
 	    public String eliminarCarrera(@PathVariable(value = "legajo") String legajo) {
 	        CollectionDocente.eliminarDocente(legajo);

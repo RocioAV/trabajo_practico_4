@@ -6,37 +6,38 @@
 		
 		<div class="container mt-5">
 	        <section class="p-4 bg-light rounded shadow-sm">
-	        	<h1 class="mb-4">Formulario Docente</h1>
-	            <form>
+	        	<h1 class="mb-4" th:text="${edicion} ? 'Modificar Docente' : 'Agregar Nuevo Docente'"></h1>
+	            <form data-th-action="${edicion} ? @{/docente/modificar} : @{/docente/crear}" th:object="${docente}" method="post">
 	                <div class="row mb-3">
 	                    <div class="col">
 	                        <label for="name" class="form-label">Nombre</label>
-	                        <input id="name" type="text" class="form-control" placeholder="Nombre" aria-label="Nombre" required>
+	                        <input id="name" type="text" class="form-control" placeholder="Nombre" aria-label="Nombre" th:field="*{nombre}" required>
 	                    </div>
 	                    <div class="col">
 	                        <label for="lastName" class="form-label">Apellido</label>
-	                        <input id="lastName" type="text" class="form-control" placeholder="Apellido" aria-label="Apellido" required>
+	                        <input id="lastName" type="text" class="form-control" placeholder="Apellido" aria-label="Apellido" th:field="*{apellido}" required>
 	                    </div>
 	                </div>
 	                
 	                <div class="row mb-3">
 	                    <div class="col">
 	                        <label for="email" class="form-label">Correo electrónico</label>
-	                        <input id="email" type="email" class="form-control" placeholder="Correo electrónico" aria-label="Correo electrónico" required>
+	                        <input id="email" type="email" class="form-control" placeholder="Correo electrónico" aria-label="Correo electrónico" th:field="*{email}" required>
 	                    </div>
 	                    <div class="col">
 	                        <label for="phone" class="form-label">Teléfono</label>
-	                        <input id="phone" type="number" class="form-control" placeholder="Teléfono" aria-label="Teléfono" required>
+	                        <input id="phone" type="number" class="form-control" placeholder="Teléfono" aria-label="Teléfono" th:field="*{telefono}" required>
 	                    </div>
 	                </div>
 	                
 	                <div class="row mb-3">
 	                    <div class="col">
 	                        <label for="legajo" class="form-label">Legajo</label>
-	                        <input id="legajo" type="text" class="form-control" placeholder="Legajo" aria-label="Legajo" required>
+	                        <input id="legajo" type="text" class="form-control" placeholder="Legajo" aria-label="Legajo" th:field="*{legajo}"
+                            	th:readonly="${edicion}" required>
 	                    </div>
 	                    <div class="col d-flex align-items-end">
-	                        <button type="submit" class="btn btn-primary mb-3">Agregar Docente</button>
+	                        <button type="submit" class="btn btn-primary mb-3" th:text="${edicion ? 'Modificar Docente' : 'Guardar Docente'}"></button>
 	                    </div>
 	                </div>
 	            </form>

@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org" lang="es">
+	<head data-th-replace="~{/layouts/header :: head}"></head>
+	<body>
+		<header data-th-replace="~{/layouts/header :: header}"></header>
+		
+		<section class="container mt-5">
+		    <h2>Tabla de Materias</h2>
+		    <div class="d-flex justify-content-end mb-2">
+                <a th:href="@{/materia/nuevo}" class="btn btn-primary">Nueva Materia</a>
+            </div>
+		    <div class="table-responsive">
+		        <table class="table table-striped">
+		            <thead>
+		                <tr>
+		                    <th scope="col">Código</th>
+		                    <th scope="col">Nombre</th>
+		                    <th scope="col">Curso</th>
+		                    <th scope="col">Cantidad de Horas</th>
+		                    <th scope="col">Modalidad</th>
+		                    <th scope="col">Docente</th>
+		                    <th scope="col">Carrera</th>
+		                    <th scope="col">Opciones</th>
+		                </tr>
+		            </thead>
+		            <tbody>
+		                <tr th:each="materia : ${materias}">
+		                    <td th:text="${materia.codigo}"></td>
+		                    <td th:text="${materia.nombre}"></td>
+		                    <td th:text="${materia.curso}"></td>
+		                    <td th:text="${materia.cantHoras}"></td>
+		                    <td th:text="${materia.modalidad}"></td>
+		                    <td th:text="${materia.docente.nombre} + ' ' + ${materia.docente.apellido}"></td>
+		                    <td th:text="${materia.carrera.nombre}"></td>
+		                    <td>
+		                        <a class="btn btn-warning" data-th-href="@{/materia/editar/}+${materia.codigo}" role="button">Editar</a>
+		                        <a class="btn btn-danger" data-th-href="@{/materia/eliminar/}+${materia.codigo}" role="button">Eliminar</a>
+		                    </td>
+		                </tr>
+		            </tbody>
+		        </table>
+		    </div>
+		</section>
+
+
+
+		
+		<footer  data-th-replace="~{/layouts/footer :: footer}"></footer>
+
+
+	
+	
+		<script type="text/javascript" th:src="@{/webjars/bootstrap/js/bootstrap.bundle.min.js}"></script>
+	</body>
+</html>

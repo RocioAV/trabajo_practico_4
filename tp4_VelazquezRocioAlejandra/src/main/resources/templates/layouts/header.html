@@ -16,23 +16,42 @@
 	            </span>
 	        </div>
 	       	<nav class="navbar navbar-expand-lg" style="background-color: #0c4a6e;">
-		        <div class="container-fluid">
-		            <a class="navbar-brand" href="#"></a>
-		            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNavAltMarkup" aria-controls="navbarNavAltMarkup" aria-expanded="false" aria-label="Toggle navigation">
-		                <span class="navbar-toggler-icon"></span>
-		            </button>
-		            <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
-		                <div class="navbar-nav">
-		                    <a class="nav-link active text-light" aria-current="page" href="#">Inicio</a>
-		                    <a class="nav-link text-light" href="#">Acerca de</a>
-		                    <a class="nav-link text-light" href="#">Carreras</a>
-		                    <a class="nav-link text-light" href="#">Noticias</a>
-		                    <a class="nav-link text-light" href="#">Contacto</a>
-		                    <a class="nav-link disabled text-light" aria-disabled="true">- Universidad Nacional de Jujuy -</a>
-		                </div>
-		            </div>
-		        </div>
-	   		</nav>
+			    <div class="container-fluid">
+			        <a class="navbar-brand" href="#"></a>
+			        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNavAltMarkup" aria-controls="navbarNavAltMarkup" aria-expanded="false" aria-label="Toggle navigation">
+			            <span class="navbar-toggler-icon"></span>
+			        </button>
+			        <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
+			            <div class="navbar-nav">
+			                <a class="nav-link active text-light" aria-current="page" th:href="@{/}">Inicio</a>
+			                <!-- Dropdown for Acerca de -->
+			                <div class="nav-item dropdown">
+			                    <a class="nav-link dropdown-toggle text-light" href="#" id="navbarDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+			                        Acerca de
+			                    </a>
+			                    <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
+                                    <li>
+                                        <a class="dropdown-item" th:href="@{/carrera/list}">Carreras</a>
+                                    </li>
+                                    <li>
+                                        <a class="dropdown-item" th:href="@{/alumno/list}">Alumnos</a>
+                                    </li>
+                                    <li>
+                                        <a class="dropdown-item" th:href="@{/materia/list}">Materias</a>
+                                    </li>
+                                    <li>
+                                        <a class="dropdown-item" th:href="@{/docente/list}">Docentes</a>
+                                    </li>
+                                </ul>
+			                </div>
+			               
+			                <a class="nav-link text-light" href="#">Noticias</a>
+			                <a class="nav-link text-light" href="#">Contacto</a>
+			                <a class="nav-link disabled text-light" aria-disabled="true">- Universidad Nacional de Jujuy -</a>
+			            </div>
+			        </div>
+			    </div>
+			</nav>
 	    </header>
 
 	</body>

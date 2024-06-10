@@ -8,33 +8,37 @@
 		<div class="container mt-5">
 	        <section class="p-4 bg-light rounded shadow-sm">
 	            <h1 class="mb-4" th:text="${edicion} ? 'Modificar Carrera' : 'Agregar Nueva Carrera'"></h1>
-	            <form action="#" method="post">
+	            <form data-th-action="${edicion} ? @{/carrera/modificar} : @{/carrera/crear}" th:object="${carrera}" method="post">
 	                <div class="row mb-3">
 	                    <div class="col">
 	                        <label for="cod" class="form-label">Código</label>
-	                        <input id="cod" type="text" class="form-control" placeholder="Código" aria-label="Código" required>
+	                        <input id="cod" type="text" class="form-control" placeholder="Código" aria-label="Código" required
+	                        	th:field="*{codigo}" th:readonly="${edicion}">
+	                        
 	                    </div>
 	                    <div class="col">
 	                        <label for="name" class="form-label">Nombre</label>
-	                        <input id="name" type="text" class="form-control" placeholder="Nombre" aria-label="Nombre" required>
+	                        <input id="name" type="text" class="form-control" placeholder="Nombre" aria-label="Nombre" required
+	                         th:field="*{nombre}">
 	                    </div>
 	                </div>
 	                
 	                <div class="row mb-3">
 	                    <div class="col">
 	                        <label for="cantAnios" class="form-label">Duración (años)</label>
-	                        <input id="cantAnios" type="number" class="form-control" placeholder="Duración (años)" aria-label="Duración (años)" required>
+	                        <input id="cantAnios" type="number" class="form-control" placeholder="Duración (años)" aria-label="Duración (años)" required
+	                         th:field="*{cantAnios}">
 	                    </div>
 	                    <div class="col">
 	                        <label class="form-label">Estado</label>
 	                        <div class="form-check">
-	                            <input class="form-check-input" type="radio" name="flexRadioDefault" id="flexRadioDefault1" value="true" required>
+	                            <input class="form-check-input" type="radio" name="flexRadioDefault" id="flexRadioDefault1" value="true" th:field="*{estado}" required >
 	                            <label class="form-check-label" for="flexRadioDefault1">
 	                                Activa
 	                            </label>
 	                        </div>
 	                        <div class="form-check">
-	                            <input class="form-check-input" type="radio" name="flexRadioDefault" id="flexRadioDefault2" value="false" required>
+	                            <input class="form-check-input" type="radio" name="flexRadioDefault" id="flexRadioDefault2" value="false" th:field="*{estado}" required>
 	                            <label class="form-check-label" for="flexRadioDefault2">
 	                                Inactiva
 	                            </label>
@@ -44,7 +48,7 @@
 	                
 	                <div class="row">
 	                    <div class="col text-center">
-	                        <button type="submit" class="btn btn-primary mb-3">Agregar carrera</button>
+	                        <button type="submit" class="btn btn-primary mb-3" th:text="${edicion ? 'Modificar Carrera' : 'Guardar Carrera'}"></button>
 	                    </div>
 	                </div>
 	            </form>

@@ -20,6 +20,14 @@ public class CarreraController {
 	@Autowired
 	private Carrera carrera;
 
+	
+	
+	/**
+     * Maneja la solicitud GET para la página de listado de carreras.
+     *
+     * @param model el modelo para la vista.
+     * @return el nombre de la vista del listado de las carreras.
+     */
 	@GetMapping("/list")
 	public String getCarrerasPage(Model model) {
 		model.addAttribute("carreras", CollectionCarrera.getCarreras());
@@ -27,6 +35,13 @@ public class CarreraController {
 		return "listCarrera";
 	}
 	
+	
+	/**
+     * Maneja la solicitud GET para la página de creación de una nueva carrera.
+     *
+     * @param model el modelo para la vista.
+     * @return el nombre de la vista del formulario de carrera.
+     */
 	@GetMapping("/nuevo")
 	public String getNuevaCarreraPage(Model model) {
 		boolean edicion=false;
@@ -36,6 +51,14 @@ public class CarreraController {
 		return "formCarrera";
 	}
 	
+	
+	
+	/**
+     * Maneja la solicitud POST para guardar una nueva carrera.
+     *
+     * @param carrera el objeto carrera a guardar.
+     * @return el ModelAndView con el listado de carreras actualizadas.
+     */
 	@PostMapping("/crear")
 	public ModelAndView guardarCarrera(@ModelAttribute("carrera") Carrera carrera) {
 		ModelAndView modelView = new ModelAndView("listCarrera");
@@ -44,6 +67,14 @@ public class CarreraController {
 		return modelView;
 	}
 	
+	
+	/**
+     * Maneja la solicitud GET para la página de edición de una carrera.
+     *
+     * @param model el modelo para la vista.
+     * @param codigo el codigo unico que identifica la carrera a editar.
+     * @return el nombre de la vista del formulario de carrera.
+     */
 	@GetMapping("/editar/{codigo}")
 	public String getModificarCarreraPage(Model model, @PathVariable(value="codigo") String codigo) {
 		boolean edicion = true;
@@ -55,6 +86,13 @@ public class CarreraController {
 		return "formCarrera";
 	}
 	
+	
+	/**
+     * Maneja la solicitud POST para modificar una carrera existente.
+     *
+     * @param carrera el objeto carrera con la información actualizada.
+     * @return una redirección al listado de carreras.
+     */
 	@PostMapping("/modificar")
 	 public String editarCarrera(@ModelAttribute("carrera") Carrera carrera) {
 		
@@ -62,6 +100,14 @@ public class CarreraController {
         return "redirect:/carrera/list";
     }
 	
+	
+	
+	/**
+     * Maneja la solicitud GET para eliminar una carrera.
+     *
+     * @param codigo el codigo unico de la carrera a eliminar.
+     * @return una redirección al listado de carreras.
+     */
 	 @GetMapping("/eliminar/{codigo}")
 	    public String eliminarCarrera(@PathVariable(value = "codigo") String codigo) {
 	        CollectionCarrera.eliminarCarrera(codigo);

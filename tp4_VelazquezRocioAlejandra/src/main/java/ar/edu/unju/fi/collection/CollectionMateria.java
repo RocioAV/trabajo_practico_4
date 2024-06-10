@@ -9,6 +9,7 @@ import java.util.function.Predicate;
 
 import org.springframework.stereotype.Component;
 
+import ar.edu.unju.fi.model.Docente;
 import ar.edu.unju.fi.model.Materia;
 
 @Component
@@ -20,7 +21,11 @@ public class CollectionMateria {
 	 * devuelve un arraylist de objetos de la clase Materia
 	 */
 	public static List<Materia> getMaterias() {
-        
+		if(materias.isEmpty()) {
+        materias.add(new Materia("1111", "Programacion Estructurada", "1ro", 6, "virtual", CollectionDocente.getDocentes().get(0), CollectionCarrera.getCarreras().get(0)));
+        materias.add(new Materia("2222", "Organizacion de computadoras", "2do", 6, "Presencial", CollectionDocente.getDocentes().get(1), CollectionCarrera.getCarreras().get(2)));
+        materias.add(new Materia("3333", "Matematica Discreta", "3ro", 5, "presencial", CollectionDocente.getDocentes().get(2), CollectionCarrera.getCarreras().get(3)));
+		}
         return materias;
     }
 	
